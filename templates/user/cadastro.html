@@ -1,12 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block title %}Cadastro{% endblock %}
+
+{% block addcss %}
+    <link rel="stylesheet" href="{% static 'user/css/user.css' %}">
+{% endblock %}
 
 {% block content %}
     <div id="form">
         <form action="#" method="POST">
             {% csrf_token %}
-            <h2 id="title">Cadastrar</h2>
+            <h2 id="title">Register on FixNotes</h2>
+            <label>Username:</label>
+            <div class="input"><input id='username' name='username' type="text"></div>
+            <label>Email:</label>
+            <div class="input"><input id='email' name='email' type="email"></div>
+            <label>Password:</label>
+            <div class="input"><input id='password' name='password' type="password"></div>
+            <div class="btn">
+                <input type="submit" value="Register!">
+            </div>
         </form>
     </div>
 {% endblock %}
