@@ -1,1 +1,26 @@
 {% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}Login{% endblock %}
+
+{% block addcss %}
+    <link rel="stylesheet" href="{% static 'user/css/user.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="form">
+        <form action="#" method="POST">
+            {% csrf_token %}
+            <h2 id="title">Login on FixNotes</h2>
+            <label>Email:</label>
+            <div class="input"><input id='email' name='email' type="email"></div>
+            <label>Password:</label>
+            <div class="input"><input id='password' name='password' type="password"></div>
+            <div class="btn">
+                <input type="submit" value="Login!">
+            </div>
+        </form>
+    </div>
+{% endblock %}
