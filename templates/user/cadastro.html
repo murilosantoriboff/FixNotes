@@ -10,7 +10,7 @@
 
 {% block content %}
     <div id="form">
-        <form action="#" method="POST">
+        <form action="{% url 'cadastro' %}" method="POST">
             {% csrf_token %}
             <h2 id="title">Register on FixNotes</h2>
             <label>Username:</label>

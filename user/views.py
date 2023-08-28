@@ -2,7 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def login(request):
-    return render(request, 'user/login.html')
+    if request.method == 'GET':
+        return render(request, 'user/login.html')
+    elif request.method == 'POST':
+        return HttpResponse('Enviado login')
 
 def cadastro(request):
-    return render(request, 'user/cadastro.html')
+    if request.method == 'GET':
+        return render(request, 'user/cadastro.html')
+    elif request.method == 'POST':
+        return HttpResponse('Enviado cadastro')
