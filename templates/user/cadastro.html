@@ -9,6 +9,11 @@
 {% endblock %}
 
 {% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {{message.tags}}">{{message}}</div>
+        {% endfor %}
+    {% endif %}
     <div id="form">
         <form action="{% url 'cadastro' %}" method="POST">
             {% csrf_token %}
@@ -25,5 +30,3 @@
         </form>
     </div>
 {% endblock %}
-
-<!-- Fazer os forms de cadastro e login funcionarem com o action do form -->
