@@ -2,20 +2,25 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.messages import constants
-from django.contrib.auth.models import User # Criar o Cadastro
-from django.contrib.auth import authenticate # Autenticar Login
-from django.contrib.auth.decorators import login_required # Permissão de login para areas diversas do sistema
-
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 
 def login(request):
     if request.method == 'GET':
         return render(request, 'user/login.html')
     elif request.method == 'POST':
-        email = request.POST.get('email')
+        username = request.POST.get('username')
         password = request.POST.get('password')
-        if len(email.strip()) == 0 or len(password.strip()) == 0:
+        if len(username.strip()) == 0 or len(password.strip()) == 0:
             messages.add_message(request, constants.ERROR, 'Não existem dados o suficiente no formulario')
             return redirect('/user/login/')
+        else:
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                return redirect('/home/')
+            else:
+                messages.add_message(request, constants.ERROR, 'Não existem dados o suficiente no formulario')
+                return redirect('/user/login/')
         
 def cadastro(request):
     if request.method == 'GET':

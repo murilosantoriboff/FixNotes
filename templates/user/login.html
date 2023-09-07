@@ -19,8 +19,8 @@
         <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
             <h2 id="title">Login on FixNotes</h2>
-            <label>Email:</label>
-            <div class="input"><input id='email' name='email' type="email"></div>
+            <label>Username:</label>
+            <div class="input"><input id='username' name='username' type="text"></div>
             <label>Password:</label>
             <div class="input"><input id='password' name='password' type="password"></div>
             <div class="btn">
