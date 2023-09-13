@@ -8,4 +8,4 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/user/login/')
 def home(request):
-    return HttpResponse('Home')
+    return render(request, 'notes/home.html')
