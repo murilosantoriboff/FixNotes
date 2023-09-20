@@ -12,4 +12,71 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+
+#title {
+    flex-direction: column;
+}
+
+li {
+    display: inline-block;
+    margin: 20px;
+}
+
+h1 {
+    font-weight: 200;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+div.card {
+    margin: 20px;
+    height: 50%;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: rgb(132, 14, 201);
+    transition: 0.3s all;
+}
+
+#inscrevase-btn {
+    border: 2px solid rgb(132, 14, 201);
+    padding: 5px;
+    border-radius: 20px;
+}
+
+#inscrevase-btn:hover {
+    background-color: rgb(132, 14, 201);
+    color: white;
+}
+
+form {
+    display: flex;
+    width: 30%;
+}
+
+input {
+    margin-top: 20px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+}
+
+form [type='submit'] {
+    background-color: rgb(132, 14, 201);
+    color: white;
+}
+
+form [type='submit']:hover {
+    cursor: pointer;
 }
