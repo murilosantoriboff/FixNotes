@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Categoria{% endblock %}
+
+{% block addcss %}
+    <link rel="stylesheet" href="{% static 'notes/css/nova_categoria.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <header>
+        <div id="title">
+            <h1>Nova Categoria</h1>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <form action="{% url 'nova_categoria' %}" method="POST">
+            {% csrf_token %}
+            <label>Titulo:</label>
+            <div class="input"><input id='titulo' name='titulo' type="text"></div>
+            <label>Descrição da Categoria:</label>
+            <div class="input"><input id='descricao' name='descricao' type="text"></div>
+            <input type="submit" value="Nova Categoria">
+        </form>
+    </main>
+
+{% endblock %}
