@@ -2,7 +2,7 @@
 
 > Status: Developing ⚠️
 
-### Finance it's a website planned by me, where i builted with Python and Django for Back-end and HTLM 5, CSS 3, JavaScript for Front-End.
+### FixNotes it's a website planned by me, where i builted with Python and Django for Back-end and HTLM 5, CSS 3, JavaScript for Front-End.
 
 ## Technologies used:
 
